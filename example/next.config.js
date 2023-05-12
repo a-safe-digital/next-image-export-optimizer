@@ -5,7 +5,7 @@ module.exports = {
     deviceSizes: [640, 750, 777, 828, 1080, 1200, 1920, 2048, 3840],
   },
   output: 'export',
-  transpilePackages: ["next-image-export-optimizer"],
+  transpilePackages: ["@a-safe-digital/next-image-export-optimizer"],
   env: {
     nextImageExportOptimizer_imageFolderPath: "public/images",
     nextImageExportOptimizer_exportFolderPath: "out",

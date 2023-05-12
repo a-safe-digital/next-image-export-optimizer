@@ -1,7 +1,7 @@
 import Head from "next/head";
 import ExportedImageLegacy from "../../src/legacy/ExportedImage";
 import ExportedImage from "../../src/ExportedImage";
-// import ExportedImage from "next-image-export-optimizer";
+// import ExportedImage from "@a-safe-digital/next-image-export-optimizer";
 
 import styles from "../styles/Home.module.css";
 
@@ -12,7 +12,7 @@ export default function Home() {
         <title>Next-Image-Export-Optimizer</title>
         <meta
           name="description"
-          content="Example of next-image-export-optimizer"
+          content="Example of @a-safe-digital/next-image-export-optimizer"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

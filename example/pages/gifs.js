@@ -11,7 +11,7 @@ export default function Home() {
         <title>Next-Image-Export-Optimizer</title>
         <meta
           name="description"
-          content="Example of next-image-export-optimizer"
+          content="Example of @a-safe-digital/next-image-export-optimizer"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

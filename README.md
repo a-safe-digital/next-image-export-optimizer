@@ -1,6 +1,6 @@
 # Next-Image-Export-Optimizer
 
-[![npm](https://img.shields.io/npm/v/next-image-export-optimizer)](https://www.npmjs.com/package/next-image-export-optimizer)
+[![npm](https://img.shields.io/npm/v/@a-safe-digital/next-image-export-optimizer)](https://www.npmjs.com/package/@a-safe-digital/next-image-export-optimizer)
 
 Use [Next.js advanced **\<Image/>** component](https://nextjs.org/docs/basic-features/image-optimization) with the static export functionality. Optimizes all static images in an additional step after the Next.js static export.
 
@@ -21,11 +21,11 @@ Placement of the images:
 ## Installation
 
 ```
-npm install next-image-export-optimizer
+npm install @a-safe-digital/next-image-export-optimizer
 
 # Or
-yarn add next-image-export-optimizer
-pnpm install next-image-export-optimizer
+yarn add @a-safe-digital/next-image-export-optimizer
+pnpm install @a-safe-digital/next-image-export-optimizer
 ```
 
 Configure the library in your **Next.js** configuration file:
@@ -38,7 +38,7 @@ module.exports = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
-  transpilePackages: ["next-image-export-optimizer"],
+  transpilePackages: ["@a-safe-digital/next-image-export-optimizer"],
   env: {
     nextImageExportOptimizer_imageFolderPath: "public/images",
     nextImageExportOptimizer_exportFolderPath: "out",
@@ -61,20 +61,20 @@ module.exports = {
    ```diff
    {
    -  "export": "next build && next export",
-   +  "export": "next build && next export && next-image-export-optimizer"
+   +  "export": "next build && next export && @a-safe-digital/next-image-export-optimizer"
    }
    ```
 
    If your Next.js project is not at the root directory where you are running the commands, for example if you are using a monorepo, you can specify the location of the next.config.js as an argument to the script:
 
    ```json
-   "export": "next build && next export && next-image-export-optimizer --nextConfigPath path/to/my/next.config.js"
+   "export": "next build && next export && @a-safe-digital/next-image-export-optimizer --nextConfigPath path/to/my/next.config.js"
    ```
 
    If you want to specify the path to the output folder, you can either do so by setting the `nextImageExportOptimizer_exportFolderPath` environment variable in your **next.config.js** file or by passing the `--exportFolderPath` argument to the script:
 
    ```json
-    "export": "next build && next export && next-image-export-optimizer --exportFolderPath path/to/my/export/folder"
+    "export": "next build && next export && @a-safe-digital/next-image-export-optimizer --exportFolderPath path/to/my/export/folder"
    ```
 
 4. Change the **\<Image />** component to the **\<ExportedImage />** component of this library.
@@ -95,7 +95,7 @@ module.exports = {
    // Replace with either of the following:
 
    // With static import (Recommended)
-   import ExportedImage from "next-image-export-optimizer";
+   import ExportedImage from "@a-safe-digital/next-image-export-optimizer";
    import testPictureStatic from "PATH_TO_IMAGE/test_static.jpg";
 
    <ExportedImage
@@ -105,7 +105,7 @@ module.exports = {
    />;
 
    // With dynamic import
-   import ExportedImage from "next-image-export-optimizer";
+   import ExportedImage from "@a-safe-digital/next-image-export-optimizer";
 
    <ExportedImage
      src="images/VERY_LARGE_IMAGE.jpg"
@@ -124,7 +124,7 @@ module.exports = {
 6. This library also supports remote images. You have to specify the src as a string starting with either http or https in the ExportedImage component.
 
    ```javascript
-   import ExportedImage from "next-image-export-optimizer";
+   import ExportedImage from "@a-safe-digital/next-image-export-optimizer";
 
    <ExportedImage
      src="https://example.com/remote-image.jpg"
@@ -167,7 +167,7 @@ module.exports = {
    Example:
 
    ```javascript
-   import ExportedImage from "next-image-export-optimizer";
+   import ExportedImage from "@a-safe-digital/next-image-export-optimizer";
 
    <ExportedImage
      src={testPictureStatic}
@@ -190,7 +190,7 @@ module.exports = {
 9. You can still use the legacy image component `next/legacy/image`:
 
    ```javascript
-   import ExportedImage from "next-image-export-optimizer/legacy/ExportedImage";
+   import ExportedImage from "@a-safe-digital/next-image-export-optimizer/legacy/ExportedImage";
 
    import testPictureStatic from "PATH_TO_IMAGE/test_static.jpg";
 
@@ -205,7 +205,7 @@ module.exports = {
 
 ## Live example
 
-You can see a live example of the use of this library at [reactapp.dev/next-image-export-optimizer](https://reactapp.dev/next-image-export-optimizer)
+You can see a live example of the use of this library at [reactapp.dev/@a-safe-digital/next-image-export-optimizer](https://reactapp.dev/@a-safe-digital/next-image-export-optimizer)
 
 ## How it works
 

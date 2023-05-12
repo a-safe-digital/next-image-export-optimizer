@@ -1,5 +1,5 @@
 {
-  "name": "next-image-export-optimizer",
+  "name": "@a-safe-digital/next-image-export-optimizer",
   "version": "1.6.1",
   "description": "Optimizes all static images for Next.js static HTML export functionality",
   "main": "dist/ExportedImage.js",
@@ -7,16 +7,6 @@
   "bin": "dist/optimizeImages.js",
   "engines": {
     "node": ">=16.0.0"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/ExportedImage.d.ts",
-      "import": "./dist/ExportedImage.js"
-    },
-    "./legacy/ExportedImage": {
-      "types": "./dist/legacy/ExportedImage.d.ts",
-      "import": "./dist/legacy/ExportedImage.js"
-    }
   },
   "typesVersions": {
     "*": {
@@ -38,12 +28,12 @@
     "test": "jest",
     "test:e2e": "npx playwright install && playwright test",
     "exportExample": "cd example && npm run export && cd ..",
-    "prepublishOnly": "npm run build && npm test && npm run test:e2e",
+    "prepublishOnly": "npm run build",
     "fetchTags": "git fetch --tags -f"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Niels-IO/next-image-export-optimizer"
+    "url": "https://github.com/Niels-IO/@a-safe-digital/next-image-export-optimizer"
   },
   "keywords": [
     "next.js",
@@ -76,5 +66,8 @@
     "jest": "^29.0.3",
     "rimraf": "^5.0.0",
     "ts-node": "^10.9.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import ExportedImage_Local from "../../src/ExportedImage";
 import ExportedImageLegacy_Local from "../../src/legacy/ExportedImage";
-import ExportedImage from "next-image-export-optimizer";
-import ExportedImageLegacy from "next-image-export-optimizer/legacy/ExportedImage";
+import ExportedImage from "@a-safe-digital/next-image-export-optimizer";
+import ExportedImageLegacy from "@a-safe-digital/next-image-export-optimizer/legacy/ExportedImage";
 
 import React from "react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ export default function Home() {
         <title>Next-Image-Export-Optimizer</title>
         <meta
           name="description"
-          content="Example of next-image-export-optimizer"
+          content="Example of @a-safe-digital/next-image-export-optimizer"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

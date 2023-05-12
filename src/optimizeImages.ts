@@ -25,7 +25,7 @@ if (process.argv.length === 3) {
   // Colorize the output to red
   console.error("\x1b[31m");
   console.error(
-    "next-image-export-optimizer: Breaking change: Please provide the path to the next.config.js file as an argument with the name --nextConfigPath."
+    "@a-safe-digital/next-image-export-optimizer: Breaking change: Please provide the path to the next.config.js file as an argument with the name --nextConfigPath."
   );
   // Reset the color
   console.error("\x1b[0m");
@@ -65,7 +65,7 @@ if (exportFolderPathCommandLine) {
 
 const nextImageExportOptimizer = async function () {
   console.log(
-    "---- next-image-export-optimizer: Begin with optimization... ---- "
+    "---- @a-safe-digital/next-image-export-optimizer: Begin with optimization... ---- "
   );
 
   // Default values
@@ -149,15 +149,15 @@ const nextImageExportOptimizer = async function () {
     if (newPath.nextImageExportOptimizer_exportFolderName !== undefined) {
       exportFolderName = newPath.nextImageExportOptimizer_exportFolderName;
     }
-    // Give the user a warning if the transpilePackages: ["next-image-export-optimizer"], is not set in the next.config.js
+    // Give the user a warning if the transpilePackages: ["@a-safe-digital/next-image-export-optimizer"], is not set in the next.config.js
     if (
       nextjsConfig.transpilePackages === undefined || // transpilePackages is not set
       (nextjsConfig.transpilePackages !== undefined &&
-        !nextjsConfig.transpilePackages.includes("next-image-export-optimizer")) // transpilePackages is set but does not include next-image-export-optimizer
+        !nextjsConfig.transpilePackages.includes("@a-safe-digital/next-image-export-optimizer")) // transpilePackages is set but does not include @a-safe-digital/next-image-export-optimizer
     ) {
       console.warn(
         "\x1b[41m",
-        `Changed in 1.2.0: You have not set transpilePackages: ["next-image-export-optimizer"] in your next.config.js. This may cause problems with next-image-export-optimizer. Please add this line to your next.config.js.`,
+        `Changed in 1.2.0: You have not set transpilePackages: ["@a-safe-digital/next-image-export-optimizer"] in your next.config.js. This may cause problems with @a-safe-digital/next-image-export-optimizer. Please add this line to your next.config.js.`,
         "\x1b[0m"
       );
     }
@@ -235,7 +235,7 @@ const nextImageExportOptimizer = async function () {
   let imageHashes: {
     [key: string]: string;
   } = {};
-  const hashFilePath = `${imageFolderPath}/next-image-export-optimizer-hashes.json`;
+  const hashFilePath = `${imageFolderPath}/@a-safe-digital/next-image-export-optimizer-hashes.json`;
   try {
     let rawData = fs.readFileSync(hashFilePath);
     imageHashes = JSON.parse(rawData);
@@ -586,7 +586,7 @@ const nextImageExportOptimizer = async function () {
       } from the optimized images folders.`
     );
 
-  console.log("---- next-image-export-optimizer: Done ---- ");
+  console.log("---- @a-safe-digital/next-image-export-optimizer: Done ---- ");
 };
 
 if (require.main === module) {
