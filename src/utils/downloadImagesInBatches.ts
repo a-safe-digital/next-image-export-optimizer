@@ -80,8 +80,9 @@ module.exports = async function downloadImagesInBatches(
     const start = i * batchSize; // calculate the start index of the batch
     const end = Math.min(imagesURLs.length, start + batchSize); // calculate the end index of the batch
     const batchURLs = imagesURLs.slice(start, end); // slice the URLs for the current batch
-    const batchFileNames = imageFileNames.slice(start, end); // slice the file names for the current batch
-    if (batchFileNames[i].fullPath === undefined) {
+    // TODO THIS NOT WORKING WELL IN THE ORIGIN LIB, NEED SPIKE
+    const batchFileNames: any = imageFileNames.slice(start, end); // slice the file names for the current batch
+    if (!batchFileNames && !batchFileNames[i] && batchFileNames[i].fullPath === undefined) {
       // log an error if the fullPath is not defined
       console.error(
         `Error: Unable to download ${batchURLs[i]} (fullPath is undefined).`
