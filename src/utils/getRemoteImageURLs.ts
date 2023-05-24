@@ -23,7 +23,7 @@ module.exports = async function getRemoteImageURLs(
     // If the extension is not supported, then we log an error
     if (
       !extension ||
-      !["JPG", "JPEG", "WEBP", "PNG", "GIF", "AVIF"].includes(
+      !["jpg", "jpeg", "webp", "png", "gif", "avif"].includes(
         extension.toUpperCase()
       )
     ) {

@@ -274,7 +274,7 @@ const nextImageExportOptimizer = async function () {
       if (filenameSplit.length === 1) return false;
       const extension = filenameSplit.pop()!.toUpperCase();
       // Only include file with image extensions
-      return ["JPG", "JPEG", "WEBP", "PNG", "AVIF", "GIF"].includes(extension);
+      return ["jpg", "jpeg", "webp", "png", "avif", "gif"].includes(extension);
     }
   );
   console.log(
@@ -345,7 +345,7 @@ const nextImageExportOptimizer = async function () {
 
         const filename = path.parse(file).name;
         if (storePicturesInWEBP) {
-          extension = "WEBP";
+          extension = "webp";
         }
 
         const isStaticImage = basePath === staticImageFolderPath;
@@ -442,7 +442,7 @@ const nextImageExportOptimizer = async function () {
           transformer.resize(width);
         }
 
-        if (extension === "AVIF") {
+        if (extension === "avif") {
           if (transformer.avif) {
             const avifQuality = quality - 15;
             transformer.avif({
@@ -452,13 +452,13 @@ const nextImageExportOptimizer = async function () {
           } else {
             transformer.webp({ quality });
           }
-        } else if (extension === "WEBP" || storePicturesInWEBP) {
+        } else if (extension === "webp" || storePicturesInWEBP) {
           transformer.webp({ quality });
-        } else if (extension === "PNG") {
+        } else if (extension === "png") {
           transformer.png({ quality });
-        } else if (extension === "JPEG" || extension === "JPG") {
+        } else if (extension === "jpeg" || extension === "jpg") {
           transformer.jpeg({ quality });
-        } else if (extension === "GIF") {
+        } else if (extension === "gif") {
           transformer.gif({ quality });
         }
 
@@ -557,7 +557,7 @@ const nextImageExportOptimizer = async function () {
     return results;
   }
 
-  const imageExtensions = [".PNG", ".GIF", ".JPG", ".JPEG", ".AVIF", ".WEBP"];
+  const imageExtensions = [".png", ".gif", ".jpg", ".jpeg", ".avif", ".webp"];
 
   const imagePaths: string[] = [];
   for (const subfolderPath of optimizedImagesFolders) {
